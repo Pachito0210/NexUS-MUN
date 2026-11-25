@@ -1,5 +1,5 @@
 // PAQUETE MODELS //
-package models;
+package logistic;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  ResultadoOperacion
@@ -12,11 +12,18 @@ public class ResultadoOperacion {
     private boolean exitoso;
     private String mensaje;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public ResultadoOperacion() { }
+    public ResultadoOperacion() {
+        this.exitoso = false;
+        this.mensaje = "";
+    }
+    public ResultadoOperacion(boolean exitoso, String mensaje) {
+        this.exitoso = exitoso;
+        this.mensaje = mensaje;
+    }
 
     // ─────────────── GETTERS & SETTERS ───────────────
-    public boolean isExitoso() { return false; }
-    public String getMensaje() { return null; }
-    public void setMensaje(String mensaje) { }
+    public boolean isExitoso() { return exitoso; }
+    public String getMensaje() { return mensaje; }
+    public void setMensaje(String mensaje) { this.mensaje = mensaje; }
 
 }

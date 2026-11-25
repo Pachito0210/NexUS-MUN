@@ -2,14 +2,14 @@
 package services;
 import java.util.List;
 import interfaces.IGestionSolicitudes;
-import models.Comida;
-import models.Comite;
-import models.Delegado;
-import models.Insumo;
-import models.Kit;
-import models.Material;
-import models.MiembroOrganizacion;
-import models.SolicitudLogistica;
+import logistic.Comida;
+import model.Comite;
+import entities.Delegado;
+import logistic.Insumo;
+import logistic.Kit;
+import logistic.Material;
+import entities.MiembroOrganizacion;
+import logistic.SolicitudLogistica;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  GestorLogistica

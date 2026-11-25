@@ -1,7 +1,7 @@
 // PAQUETE E IMPORTAR //
 package interfaces;
 import java.util.List;
-import models.SolicitudLogistica;
+import logistic.SolicitudLogistica;
 
 // ══════════════════════════════════════════════════════════════
 //  INTERFAZ  ·  IGestionSolicitudes

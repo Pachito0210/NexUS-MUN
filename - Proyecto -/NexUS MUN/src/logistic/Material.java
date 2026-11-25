@@ -1,5 +1,5 @@
 // PAQUETE MODELS //
-package models;
+package logistic;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  Material

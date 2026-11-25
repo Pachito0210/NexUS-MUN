@@ -1,14 +1,14 @@
 // PAQUETE MODELS //
-package models;
+package entities;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  Presidente
 // ══════════════════════════════════════════════════════════════
-//  Persona que preside un comité. Pertenece a una institución y su ID empieza por "PR" (PR001, PR002...).
+//  Presidente de un comité organizador. Pertenece a una institución y su ID empieza por "PR" (PR001, PR002...).
 //  * HERENCIA *
-//    - Presidente ES UN Participante, hereda nombre, correo e ID y solo agrega su institución
-//  * POLIMORFISMO *
-//    - Presidente sobrescribe getRol() de Participante y responde "Presidente"
+//    - Presidente ES UN Participante, hereda nombre, correo e ID y agrega su institución.
+//  * POLIMORFISMO POR SOBRECARGA *
+//    - Presidente sobrescribe getRol() de Participante y responde "Presidente".
 // ══════════════════════════════════════════════════════════════
 public class Presidente extends Participante {
 
@@ -19,39 +19,36 @@ public class Presidente extends Participante {
     // ───────────────── CONSTRUCTORES ─────────────────
     public Presidente() { }
 
-    // ─────────────── GETTERS & SETTERS ───────────────
-    public Institucion getInstitucion() { return null; }
-    public void setInstitucion(Institucion institucion) { }
-
     // ══════════════════════════════════════════════════════════════
     //  ROL
     // ══════════════════════════════════════════════════════════════
     // getRol()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
+    //  - COMO FUNCIONA: Devuelve el nombre del rol correspondiente a esta clase.
+    //  - PARA QUÉ SIRVE: Permite identificar a este participante como Presidente.
+    //  * POLIMORFISMO POR SOBRESCRITURA *
+    //    - Implementa el metodo abstracto getRol() heredado de Participante.
     @Override public String getRol() {
-        return null;
+        return "Presidente";
     }
 
     // ══════════════════════════════════════════════════════════════
-    //  GESTIÓN DE ID
+    //  INSTITUCIÓN
     // ══════════════════════════════════════════════════════════════
-    // generarId()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    private static String generarId() {
-        return null;
+    // setInstitucion()
+    //  - COMO FUNCIONA: Asigna la institución recibida al atributo institucion.
+    //  - PARA QUÉ SIRVE: Permite establecer a qué institución pertenece el Presidente.
+    //  * ENCAPSULAMIENTO *
+    //    - Controla la modificación del atributo privado institucion.
+    public void setInstitucion(Institucion institucion) {
+        this.institucion = institucion;
     }
-    // sincronizarContador()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public static void sincronizarContador(int mayorNumero) {
+    // getInstitucion()
+    //  - COMO FUNCIONA: Devuelve la institución almacenada en el atributo institucion.
+    //  - PARA QUÉ SIRVE: Permite consultar a qué institución pertenece el Presidente.
+    //  * ENCAPSULAMIENTO *
+    //    - Permite acceder al atributo privado institucion desde otras clases.
+    public Institucion getInstitucion() {
+        return institucion;
     }
 
 }

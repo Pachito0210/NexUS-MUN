@@ -1,19 +1,19 @@
 // PAQUETE E IMPORTAR //
 package persistence;
 import java.util.List;
-import interfaces.IImporble;
-import models.Comite;
-import models.PreferenciaComite;
-import models.ResultadoOperacion;
+import interfaces.IImportable;
+import model.Comite;
+import logistic.PreferenciaComite;
+import logistic.ResultadoOperacion;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  ImportadorExcel
 // ══════════════════════════════════════════════════════════════
 //  Lee las inscripciones de los delegados desde un archivo de Excel.
 //  * INTERFAZ *
-//    - Implementa IImporble, que define cómo se validan y leen las inscripciones
+//    - Implementa IImportable, que define cómo se validan y leen las inscripciones
 // ══════════════════════════════════════════════════════════════
-public class ImportadorExcel implements IImporble {
+public class ImportadorExcel implements IImportable {
 
     // ───────────────── CONSTRUCTORES ─────────────────
     public ImportadorExcel() { }

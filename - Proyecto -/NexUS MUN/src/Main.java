@@ -1,29 +1,22 @@
-import javafx.application.Application;
-import javafx.stage.Stage;
+import ui.MenuPrincipal;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  Main
+//  CLASE · Main
 // ══════════════════════════════════════════════════════════════
-//  Punto de entrada de la aplicación JavaFX.
-//  * HERENCIA *
-//    - Main ES UN Application, hereda el ciclo de vida de JavaFX y sobrescribe start()
+//  Punto de entrada del sistema NexUS MUN.
 // ══════════════════════════════════════════════════════════════
-public class Main extends Application {
-    // ─────────────────── CONSTRUCTORES ───────────────────
-    public Main() { }
-
-    // ─────────────────── START ───────────────────
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    @Override public void start(Stage primaryStage) {
-    }
-    // ─────────────────── MAIN ───────────────────
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
+public class Main {
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            // Si el estilo del sistema no está disponible, utiliza el estilo predeterminado de Swing.
+        }
+        SwingUtilities.invokeLater(() -> {
+            MenuPrincipal ventana = new MenuPrincipal();
+            ventana.setVisible(true);
+        });
     }
 }

@@ -1,6 +1,11 @@
 // PAQUETE E IMPORTAR //
-package models;
+package model;
 import java.util.List;
+
+import entities.Delegado;
+import entities.Participante;
+import entities.Institucion;
+import logistic.ResultadoOperacion;
 import services.GestorComites;
 import services.GestorLogistica;
 

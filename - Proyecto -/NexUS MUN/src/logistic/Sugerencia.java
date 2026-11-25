@@ -1,36 +1,32 @@
-// PAQUETE E IMPORTAR //
-package models;
-import java.util.List;
+// PAQUETE MODELS //
+package logistic;
+
+import entities.Delegado;
+import model.Comite;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  PreferenciaComite
+//  CLASE  ·  Sugerencia
 // ══════════════════════════════════════════════════════════════
-//  Comités que un delegado eligió como preferencia al inscribirse.
+//  Propuesta de cambiar a un delegado de comité, con el motivo de la sugerencia.
 // ══════════════════════════════════════════════════════════════
-public class PreferenciaComite {
+public class Sugerencia {
 
     // ─────────────────── ATRIBUTOS ───────────────────
     private Delegado delegado;
-    private List<Comite> comitesElegidos;
+    private Comite comiteActual;
+    private Comite comiteSugerido;
+    private String motivo;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public PreferenciaComite() { }
+    public Sugerencia() { }
 
     // ─────────────── GETTERS & SETTERS ───────────────
     public Delegado getDelegado() { return null; }
     public void setDelegado(Delegado delegado) { }
-    public List<Comite> getComitesElegidos() { return null; }
-    public void setComitesElegidos(List<Comite> comitesElegidos) { }
-
-    // ══════════════════════════════════════════════════════════════
-    //  CONSULTAS
-    // ══════════════════════════════════════════════════════════════
-    // incluye()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public boolean incluye(Comite comite) {
-        return false;
-    }
+    public Comite getComiteActual() { return null; }
+    public void setComiteActual(Comite comiteActual) { }
+    public Comite getComiteSugerido() { return null; }
+    public void setComiteSugerido(Comite comiteSugerido) { }
+    public String getMotivo() { return null; }
+    public void setMotivo(String motivo) { }
 
 }

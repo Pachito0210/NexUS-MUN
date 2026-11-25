@@ -1,52 +1,48 @@
-// PAQUETE E IMPORTAR //
-package repositories;
-import interfaces.IGuardable;
-import models.EdicionMUN;
-import models.ResultadoOperacion;
+// PAQUETE MODELS //
+package logistic;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  RepositorioJson
+//  CLASE  ·  SolicitudLogistica
 // ══════════════════════════════════════════════════════════════
-//  Guarda y carga la edición del evento en un archivo JSON, con copia de seguridad.
-//  * INTERFAZ *
-//    - Implementa IGuardable, que define cómo se guarda y carga la edición
+//  Petición de material o apoyo logístico hecha desde un salón, con su nivel de urgencia.
 // ══════════════════════════════════════════════════════════════
-public class RepositorioJson implements IGuardable {
+public class SolicitudLogistica {
 
     // ─────────────────── ATRIBUTOS ───────────────────
-    private String rutaArchivo;
+    private int idSolicitud;
+    private String salon;
+    private String tipo;
+    private int urgencia;
+    private boolean atendida = false;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public RepositorioJson() { }
+    public SolicitudLogistica() { }
 
     // ─────────────── GETTERS & SETTERS ───────────────
-    public String getRutaArchivo() { return null; }
-    public void setRutaArchivo(String rutaArchivo) { }
+    public int getIdSolicitud() { return 0; }
+    public String getSalon() { return null; }
+    public void setSalon(String salon) { }
+    public String getTipo() { return null; }
+    public void setTipo(String tipo) { }
+    public int getUrgencia() { return 0; }
+    public void setUrgencia(int urgencia) { }
+    public boolean isAtendida() { return atendida; }
 
     // ══════════════════════════════════════════════════════════════
-    //  PERSISTENCIA
+    //  ATENCIÓN
     // ══════════════════════════════════════════════════════════════
-    // guardar()
+    // atender()
     //  - COMO FUNCIONA: ...
     //  - PARA QUÉ SIRVE: ...
     //  * CONCEPTO DE POO *
     //    - ...
-    @Override public ResultadoOperacion guardar(EdicionMUN edicion) {
+    public void atender() { this.atendida = true; }
+    // getNombreUrgencia()
+    //  - COMO FUNCIONA: ...
+    //  - PARA QUÉ SIRVE: ...
+    //  * CONCEPTO DE POO *
+    //    - ...
+    public String getNombreUrgencia() {
         return null;
-    }
-    // cargar()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    @Override public EdicionMUN cargar() {
-        return null;
-    }
-    // crearCopiaSeguridad()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public void crearCopiaSeguridad() {
     }
 
 }

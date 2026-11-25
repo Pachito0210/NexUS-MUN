@@ -1,12 +1,12 @@
 // PAQUETE E IMPORTAR //
 package services;
 import java.util.List;
-import models.Comite;
-import models.Delegacion;
-import models.Delegado;
-import models.PreferenciaComite;
-import models.ResultadoOperacion;
-import models.Sugerencia;
+import model.Comite;
+import model.Delegacion;
+import entities.Delegado;
+import logistic.PreferenciaComite;
+import logistic.ResultadoOperacion;
+import logistic.Sugerencia;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  GestorComites

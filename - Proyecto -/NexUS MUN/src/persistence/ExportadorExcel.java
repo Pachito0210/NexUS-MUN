@@ -2,7 +2,7 @@
 package persistence;
 import java.util.List;
 import interfaces.IExportable;
-import models.ResultadoOperacion;
+import logistic.ResultadoOperacion;
 
 // ══════════════════════════════════════════════════════════════
 //  CLASE  ·  ExportadorExcel

@@ -1,48 +1,38 @@
 // PAQUETE MODELS //
-package models;
+package logistic;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  SolicitudLogistica
+//  CLASE  ·  Comida
 // ══════════════════════════════════════════════════════════════
-//  Petición de material o apoyo logístico hecha desde un salón, con su nivel de urgencia.
+//  Insumo de alimentación para un delegado, según el tipo de comida y la jornada.
+//  * HERENCIA *
+//    - Comida ES UN Insumo, hereda el estado de entrega y solo agrega su tipo y jornada
+//  * POLIMORFISMO *
+//    - Comida sobrescribe getDescripcion() de Insumo y describe la comida y su jornada
 // ══════════════════════════════════════════════════════════════
-public class SolicitudLogistica {
+public class Comida extends Insumo {
 
     // ─────────────────── ATRIBUTOS ───────────────────
-    private int idSolicitud;
-    private String salon;
-    private String tipo;
-    private int urgencia;
-    private boolean atentidad = false;
+    private String tipoComida;
+    private String jornada;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public SolicitudLogistica() { }
+    public Comida() { }
 
     // ─────────────── GETTERS & SETTERS ───────────────
-    public int getIdSolicitud() { return 0; }
-    public String getSalon() { return null; }
-    public void setSalon(String salon) { }
-    public String getTipo() { return null; }
-    public void setTipo(String tipo) { }
-    public int getUrgencia() { return 0; }
-    public void setUrgencia(int urgencia) { }
-    public boolean isAtentidad() { return false; }
+    public String getTipoComida() { return null; }
+    public void setTipoComida(String tipoComida) { }
+    public String getJornada() { return null; }
+    public void setJornada(String jornada) { }
 
     // ══════════════════════════════════════════════════════════════
-    //  ATENCIÓN
+    //  DESCRIPCIÓN
     // ══════════════════════════════════════════════════════════════
-    // atender()
+    // getDescripcion()
     //  - COMO FUNCIONA: ...
     //  - PARA QUÉ SIRVE: ...
     //  * CONCEPTO DE POO *
     //    - ...
-    public void atender() {
-    }
-    // getNombreUrgencia()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public String getNombreUrgencia() {
+    @Override public String getDescripcion() {
         return null;
     }
 

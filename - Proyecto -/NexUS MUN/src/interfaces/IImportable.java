@@ -1,37 +1,30 @@
 // PAQUETE E IMPORTAR //
-package models;
+package interfaces;
 import java.util.List;
+import model.Comite;
+import logistic.PreferenciaComite;
+import logistic.ResultadoOperacion;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  Kit
+//  INTERFAZ  ·  IImportable
 // ══════════════════════════════════════════════════════════════
-//  Insumo que contiene un conjunto de materiales para un delegado.
-//  * HERENCIA *
-//    - Kit ES UN Insumo, hereda el estado de entrega y solo agrega su contenido
-//  * POLIMORFISMO *
-//    - Kit sobrescribe getDescripcion() de Insumo y describe sus materiales
+//  Contrato para importar inscripciones desde un archivo.
 // ══════════════════════════════════════════════════════════════
-public class Kit extends Insumo {
-
-    // ─────────────────── ATRIBUTOS ───────────────────
-    private List<Material> contenido;
-    // ───────────────── CONSTRUCTORES ─────────────────
-    public Kit() { }
-
-    // ─────────────── GETTERS & SETTERS ───────────────
-    public List<Material> getContenido() { return null; }
-    public void setContenido(List<Material> contenido) { }
-
+public interface IImportable {
     // ══════════════════════════════════════════════════════════════
-    //  DESCRIPCIÓN
+    //  IMPORTACIÓN
     // ══════════════════════════════════════════════════════════════
-    // getDescripcion()
+    // validarArchivo()
     //  - COMO FUNCIONA: ...
     //  - PARA QUÉ SIRVE: ...
     //  * CONCEPTO DE POO *
     //    - ...
-    @Override public String getDescripcion() {
-        return null;
-    }
+    ResultadoOperacion validarArchivo(String ruta);
+    // leerInscripciones()
+    //  - COMO FUNCIONA: ...
+    //  - PARA QUÉ SIRVE: ...
+    //  * CONCEPTO DE POO *
+    //    - ...
+    List<PreferenciaComite> leerInscripciones(String ruta, List<Comite> comites);
 
 }

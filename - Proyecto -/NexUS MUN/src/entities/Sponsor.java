@@ -1,57 +1,54 @@
 // PAQUETE MODELS //
-package models;
+package entities;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  Delegado
+//  CLASE  ·  Sponsor
 // ══════════════════════════════════════════════════════════════
-//  Persona que representa a un país u organización en un comité. Pertenece a una institución y su ID empieza por "DE" (DE001, DE002...).
+//  Representante de una institución y sus delegados en el evento. Pertenece a una institución y su ID empieza por "SP" (SP001, SP002...).
 //  * HERENCIA *
-//    - Delegado ES UN Participante, hereda nombre, correo e ID y solo agrega su institución
-//  * POLIMORFISMO *
-//    - Delegado sobrescribe getRol() de Participante y responde "Delegado"
+//    - Sponsor ES UN Participante, hereda nombre, correo e ID y agrega su institución.
+//  * POLIMORFISMO POR SOBRECARGA *
+//    - Sponsor sobrescribe getRol() de Participante y responde "Sponsor".
 // ══════════════════════════════════════════════════════════════
-public class Delegado extends Participante {
+public class Sponsor extends Participante {
 
     // ─────────────────── ATRIBUTOS ───────────────────
-    private static String prefijoID = "DE";
+    private static String prefijoID = "SP";
     private static int ultimoNumeroAsignado = 0;
     private Institucion institucion;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public Delegado() { }
-
-    // ─────────────── GETTERS & SETTERS ───────────────
-    public Institucion getInstitucion() { return null; }
-    public void setInstitucion(Institucion institucion) { }
+    public Sponsor() { }
 
     // ══════════════════════════════════════════════════════════════
     //  ROL
     // ══════════════════════════════════════════════════════════════
     // getRol()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
+    //  - COMO FUNCIONA: Devuelve el nombre del rol correspondiente a esta clase.
+    //  - PARA QUÉ SIRVE: Permite identificar a este participante como Sponsor.
+    //  * POLIMORFISMO POR SOBRESCRITURA *
+    //    - Implementa el metodo abstracto getRol() heredado de Participante.
     @Override public String getRol() {
-        return null;
+        return "Sponsor";
     }
 
     // ══════════════════════════════════════════════════════════════
-    //  GESTIÓN DE ID
+    //  INSTITUCIÓN
     // ══════════════════════════════════════════════════════════════
-    // generarId()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    private static String generarId() {
-        return null;
+    // setInstitucion()
+    //  - COMO FUNCIONA: Asigna la institución recibida al atributo institucion.
+    //  - PARA QUÉ SIRVE: Permite establecer a qué institución pertenece el Sponsor.
+    //  * ENCAPSULAMIENTO *
+    //    - Controla la modificación del atributo privado institucion.
+    public void setInstitucion(Institucion institucion) {
+        this.institucion = institucion;
     }
-    // sincronizarContador()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public static void sincronizarContador(int mayorNumero) {
+    // getInstitucion()
+    //  - COMO FUNCIONA: Devuelve la institución almacenada en el atributo institucion.
+    //  - PARA QUÉ SIRVE: Permite consultar a qué institución pertenece el Sponsor.
+    //  * ENCAPSULAMIENTO *
+    //    - Permite acceder al atributo privado institucion desde otras clases.
+    public Institucion getInstitucion() {
+        return institucion;
     }
 
 }

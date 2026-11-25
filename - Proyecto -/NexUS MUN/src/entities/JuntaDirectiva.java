@@ -1,72 +1,54 @@
 // PAQUETE MODELS //
-package models;
+package entities;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  MiembroOrganizacion
+//  CLASE  ·  JuntaDirectiva
 // ══════════════════════════════════════════════════════════════
-//  Integrante del equipo organizador. Tiene un cargo y su ID empieza por "US" (US001, US002...).
+//  Integrante de la Junta Directiva. Tiene un cargo y su ID empieza por "JD" (JD001, JD002...).
 //  * HERENCIA *
-//    - MiembroOrganizacion ES UN Participante, hereda nombre, correo e ID y solo agrega su cargo
-//  * POLIMORFISMO *
-//    - MiembroOrganizacion sobrescribe getRol() de Participante y responde "MiembroOrganizacion"
+//    - JuntaDirectiva ES UN Participante, hereda nombre, correo e ID y agrega su cargo.
+//  * POLIMORFISMO POR SOBRECARGA *
+//    - JuntaDirectiva sobrescribe getRol() de Participante y responde "JuntaDirectiva".
 // ══════════════════════════════════════════════════════════════
-public class MiembroOrganizacion extends Participante {
+public class JuntaDirectiva extends Participante {
 
     // ─────────────────── ATRIBUTOS ───────────────────
-    private static String prefijoID = "US";
+    private static String prefijoID = "JD";
     private static int ultimoNumeroAsignado = 0;
     private String cargo;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public MiembroOrganizacion() { }
+    public JuntaDirectiva() { }
 
     // ══════════════════════════════════════════════════════════════
     //  ROL
     // ══════════════════════════════════════════════════════════════
     // getRol()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
+    //  - COMO FUNCIONA: Devuelve el nombre del rol correspondiente a esta clase.
+    //  - PARA QUÉ SIRVE: Permite identificar a este participante como integrante de la Junta Directiva.
+    //  * POLIMORFISMO POR SOBRECARGA *
+    //    - Implementa el metodo abstracto getRol() heredado de Participante.
     @Override public String getRol() {
-        return null;
+        return "JuntaDirectiva";
     }
 
     // ══════════════════════════════════════════════════════════════
     //  CARGO
     // ══════════════════════════════════════════════════════════════
     // setCargo()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
+    //  - COMO FUNCIONA: Asigna el cargo recibido al atributo cargo.
+    //  - PARA QUÉ SIRVE: Permite establecer la función que desempeña el integrante dentro de la Junta Directiva.
+    //  * ENCAPSULAMIENTO *
+    //    - Controla la modificación del atributo privado cargo.
     public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
     // getCargo()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
+    //  - COMO FUNCIONA: Devuelve el cargo almacenado en el atributo cargo.
+    //  - PARA QUÉ SIRVE: Permite consultar la función que desempeña el integrante de la Junta Directiva.
+    //  * ENCAPSULAMIENTO *
+    //    - Permite acceder al atributo privado cargo desde otras clases.
     public String getCargo() {
-        return null;
-    }
-
-    // ══════════════════════════════════════════════════════════════
-    //  GESTIÓN DE ID
-    // ══════════════════════════════════════════════════════════════
-    // generarId()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public static String generarId() {
-        return null;
-    }
-    // sincronizarContador()
-    //  - COMO FUNCIONA: ...
-    //  - PARA QUÉ SIRVE: ...
-    //  * CONCEPTO DE POO *
-    //    - ...
-    public static void sincronizarContador(int mayorNumero) {
+        return cargo;
     }
 
 }

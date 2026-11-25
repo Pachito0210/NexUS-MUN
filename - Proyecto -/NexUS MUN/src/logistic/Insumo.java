@@ -1,6 +1,9 @@
 // PAQUETE E IMPORTAR //
-package models;
+package logistic;
 import java.util.Date;
+
+import entities.Delegado;
+import entities.MiembroOrganizacion;
 import interfaces.IEntregable;
 
 // ══════════════════════════════════════════════════════════════

@@ -1,6 +1,6 @@
 // PAQUETE E IMPORTAR //
 package interfaces;
-import models.MiembroOrganizacion;
+import entities.MiembroOrganizacion;
 
 // ══════════════════════════════════════════════════════════════
 //  INTERFAZ  ·  IEntregable

@@ -1,39 +1,39 @@
-// PAQUETE MODELS //
-package models;
+// PAQUETE E IMPORTAR //
+package logistic;
+import entities.Delegado;
+import model.Comite;
+
+import java.util.List;
 
 // ══════════════════════════════════════════════════════════════
-//  CLASE  ·  Comida
+//  CLASE  ·  PreferenciaComite
 // ══════════════════════════════════════════════════════════════
-//  Insumo de alimentación para un delegado, según el tipo de comida y la jornada.
-//  * HERENCIA *
-//    - Comida ES UN Insumo, hereda el estado de entrega y solo agrega su tipo y jornada
-//  * POLIMORFISMO *
-//    - Comida sobrescribe getDescripcion() de Insumo y describe la comida y su jornada
+//  Comités que un delegado eligió como preferencia al inscribirse.
 // ══════════════════════════════════════════════════════════════
-public class Comida extends Insumo {
+public class PreferenciaComite {
 
     // ─────────────────── ATRIBUTOS ───────────────────
-    private String tipoComida;
-    private String jornada;
+    private Delegado delegado;
+    private List<Comite> comitesElegidos;
     // ───────────────── CONSTRUCTORES ─────────────────
-    public Comida() { }
+    public PreferenciaComite() { }
 
     // ─────────────── GETTERS & SETTERS ───────────────
-    public String getTipoComida() { return null; }
-    public void setTipoComida(String tipoComida) { }
-    public String getJornada() { return null; }
-    public void setJornada(String jornada) { }
+    public Delegado getDelegado() { return null; }
+    public void setDelegado(Delegado delegado) { }
+    public List<Comite> getComitesElegidos() { return null; }
+    public void setComitesElegidos(List<Comite> comitesElegidos) { }
 
     // ══════════════════════════════════════════════════════════════
-    //  DESCRIPCIÓN
+    //  CONSULTAS
     // ══════════════════════════════════════════════════════════════
-    // getDescripcion()
+    // incluye()
     //  - COMO FUNCIONA: ...
     //  - PARA QUÉ SIRVE: ...
     //  * CONCEPTO DE POO *
     //    - ...
-    @Override public String getDescripcion() {
-        return null;
+    public boolean incluye(Comite comite) {
+        return false;
     }
 
 }
