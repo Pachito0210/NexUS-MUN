@@ -1,97 +1,52 @@
+// PAQUETE MODELS //
 package entities;
 
-/*
- * =====================================================================
- *  CLASE: Institucion                 (ROL 2 — paquete models)
- * =====================================================================
- *  - COMO FUNCIONA: Guarda el nombre y el tipo de una institución
- *    (ej. "Colegio San Carlos", "Colegio").
- *  - PARA QUÉ SIRVE: Agrupar a los Delegados, Sponsors y Presidentes
- *    según el colegio o universidad del que vienen.
- *  * CONCEPTO DE POO *: Asociación: un Delegado "tiene una"
- *    Institucion; Encapsulamiento de sus datos.
- * =====================================================================
- */
+// ══════════════════════════════════════════════════════════════
+//  CLASE  ·  Institucion
+// ══════════════════════════════════════════════════════════════
+//  Colegio, universidad u organización a la que pertenecen los participantes.
+// ══════════════════════════════════════════════════════════════
 public class Institucion {
 
+    // ─────────────────── ATRIBUTOS ───────────────────
     private String nombre;
     private String tipo;
+    // ───────────────── CONSTRUCTORES ─────────────────
+    public Institucion() { }
 
-    /*
-     * ---------------------------------------------------------------
-     *  CONSTRUCTOR: Institucion()
-     *  - COMO FUNCIONA: Crea la institución sin datos.
-     *  - PARA QUÉ SIRVE: Lo necesita la carga desde JSON.
-     *  * CONCEPTO DE POO *: Sobrecarga de constructores.
-     * ---------------------------------------------------------------
-     */
-    public Institucion() {}
-
-    /*
-     * ---------------------------------------------------------------
-     *  CONSTRUCTOR: Institucion(String nombre, String tipo)
-     *  - COMO FUNCIONA: Asigna nombre y tipo quitando espacios extra.
-     *  - PARA QUÉ SIRVE: Crear la institución en una sola línea.
-     *  * CONCEPTO DE POO *: Sobrecarga de constructores.
-     * ---------------------------------------------------------------
-     */
-    public Institucion(String nombre, String tipo) {
-        this.nombre = nombre == null ? null : nombre.trim();
-        this.tipo = tipo == null ? null : tipo.trim();
-    }
-
-    /*
-     * ---------------------------------------------------------------
-     *  MÉTODOS: getNombre() / setNombre(String) / getTipo() / setTipo(String)
-     *  - COMO FUNCIONA: Leen o cambian los atributos privados.
-     *  - PARA QUÉ SIRVE: Consultar y corregir los datos de la institución.
-     *  * CONCEPTO DE POO *: Encapsulamiento.
-     * ---------------------------------------------------------------
-     */
+    // ─────────────── GETTERS & SETTERS ───────────────
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
-        this.nombre = nombre == null ? null : nombre.trim();
+        this.nombre = nombre;
     }
-
     public String getTipo() {
         return tipo;
     }
-
     public void setTipo(String tipo) {
-        this.tipo = tipo == null ? null : tipo.trim();
+        this.tipo = tipo;
     }
 
-    /*
-     * ---------------------------------------------------------------
-     *  MÉTODO: tieneElMismoNombreQue(String nombre)
-     *  - COMO FUNCIONA: Compara los nombres con trim() y
-     *    equalsIgnoreCase(); retorna false si alguno es null.
-     *  - PARA QUÉ SIRVE: Evitar instituciones duplicadas como
-     *    "Colegio X" y " colegio x ".
-     *  * CONCEPTO DE POO *: Comportamiento propio del objeto: la
-     *    institución sabe compararse a sí misma.
-     * ---------------------------------------------------------------
-     */
+    // ══════════════════════════════════════════════════════════════
+    //  COMPARACIÓN
+    // ══════════════════════════════════════════════════════════════
+    // tieneElMismoNombreQue()
+    //  - COMO FUNCIONA: Compara el nombre de la institución con el nombre recibido y devuelve true si son iguales.
+    //  - PARA QUÉ SIRVE: Verificar si una institución ya está registrada evitando duplicados.
+    //  * ENCAPSULAMIENTO *
+    //    - Permite comparar las instituciones utilizando su nombre sin acceder directamente a sus atributos.
     public boolean tieneElMismoNombreQue(String nombre) {
-        if (this.nombre == null || nombre == null) {
-            return false;
-        }
-        return this.nombre.trim().equalsIgnoreCase(nombre.trim());
+        return this.nombre != null && this.nombre.equalsIgnoreCase(nombre);
+    }
+    @Override public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Institucion)) return false;
+        Institucion otra = (Institucion) o;
+        return nombre != null && nombre.equalsIgnoreCase(otra.nombre);
+    }
+    @Override public int hashCode() {
+        return nombre == null ? 0 : nombre.toLowerCase().hashCode();
     }
 
-    /*
-     * ---------------------------------------------------------------
-     *  MÉTODO: toString()
-     *  - COMO FUNCIONA: Devuelve "Nombre (Tipo)".
-     *  - PARA QUÉ SIRVE: Mostrar la institución en listas y consola.
-     *  * CONCEPTO DE POO *: Polimorfismo (sobrescritura).
-     * ---------------------------------------------------------------
-     */
-    @Override
-    public String toString() {
-        return nombre + (tipo == null || tipo.isEmpty() ? "" : " (" + tipo + ")");
-    }
 }
